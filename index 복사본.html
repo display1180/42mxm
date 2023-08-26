@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>無爲自然</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link
+      href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @font-face {
+        font-family: "01-Digit";
+        src: url("01-Digit.ttf.woff") format("woff"),
+          url("01-Digit.ttf.svg#01-Digit") format("svg"),
+          url("01-Digit.ttf.eot"),
+          url("01-Digit.eot?#iefix") format("embedded-opentype");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "monstapix";
+        src: url("monstapix.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        font-size: 1.25rem;
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+      body {
+        color: #fff;
+        font-family: "01-Digit";
+        background-color: #12211e;
+      }
+
+      /* parallax__cont */
+      .parallax__item {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .parallax__item__num {
+        font-size: 5vw;
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        font-family: "Lato";
+        font-weight: 100;
+        z-index: 100;
+      }
+      .parallax__item__imgWrap {
+        width: 30%;
+        padding-bottom: 18%;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+      .parallax__item__img {
+        position: absolute;
+        left: -5%;
+        top: -5%;
+        width: 110%;
+        height: 110%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        filter: saturate(0%);
+        transition: all 1s;
+      }
+      .parallax__item__img:hover {
+        filter: saturate(100%);
+        transform: scale(1.025);
+      }
+
+      /* option */
+      body {
+        height: 8200px;
+      }
+      #parallax__cont {
+        overscroll-behavior: none;
+        width: 900%;
+        height: 100vh;
+        display: flex;
+        flex-wrap: nowrap;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <header id="parallax__title">
+      <button onClick="play()" id="play">Play</button>
+      <button onClick="resume()" id="resume">Play</button>
+      <button onClick="pause()" id="pause">Pause</button>
+      <button onClick="scrollMode()" id="scrBtn">Scroll</button>
+      <audio autoplay="true" id="audio" controls loop>
+        <source src="./abstract.m4a" />
+      </audio>
+    </header> -->
+    <!-- //parallax__title  -->
+
+    <main id="parallax__cont">
+      <section id="section1" class="parallax__item"></section>
+      <!-- //section1 -->
+
+      <section id="section2" class="parallax__item"></section>
+      <!-- //section2 -->
+
+      <section id="section3" class="parallax__item"></section>
+      <!-- //section3 -->
+
+      <section id="section4" class="parallax__item"></section>
+      <!-- //section4 -->
+
+      <section id="section5" class="parallax__item"></section>
+      <!-- //section5 -->
+
+      <section id="section6" class="parallax__item"></section>
+      <!-- //section6 -->
+
+      <section id="section7" class="parallax__item"></section>
+      <!-- //section7 -->
+
+      <section id="section8" class="parallax__item"></section>
+      <!-- //section8 -->
+
+      <section id="section9" class="parallax__item"></section>
+
+      <div class="mask">
+        <!-- <h2>無爲自然</h2> -->
+
+        <div
+          class="row"
+          style="padding-bottom: 10px; border-bottom: 0.1em solid #05fb9a"
+        >
+          <h3>42MXM</h3>
+          <h3 style="position: absolute; left: 50%; transform: translate(-50%)">
+            DESIGN CAMP 2023
+          </h3>
+          <h3>YOUNGSEO YOOK</h3>
+        </div>
+        <!-- <h1>無爲自然</h1> -->
+        <div class="contents">
+          <div class="left">
+            <table>
+              <tr class="last">
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>UPRIGHT PIANO</td>
+              </tr>
+              <tr>
+                <td>SHORT STRING</td>
+              </tr>
+              <tr>
+                <td>SLOW PAD</td>
+              </tr>
+              <tr>
+                <td>BLOOMING BASS</td>
+              </tr>
+              <tr>
+                <td>SUPER SAWS</td>
+              </tr>
+              <tr>
+                <td>WAVE SPACE</td>
+              </tr>
+              <tr>
+                <td>BUTIQUE 78</td>
+              </tr>
+            </table>
+          </div>
+          <div class="right">
+            <table>
+              <tr class="last">
+                <td style="">01</td>
+                <td>02</td>
+                <td>03</td>
+                <td>04</td>
+                <td>05</td>
+                <td>06</td>
+                <td>07</td>
+                <td>08</td>
+                <td>09</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+                <td>32</td>
+                <td>33</td>
+                <td>34</td>
+                <td>35</td>
+                <td>36</td>
+                <td>37</td>
+                <td>38</td>
+                <td>39</td>
+                <td>40</td>
+                <td>41</td>
+                <td>42</td>
+                <td>43</td>
+                <td>44</td>
+                <td>45</td>
+                <td>46</td>
+                <td>47</td>
+                <td>48</td>
+                <td>49</td>
+                <td>50</td>
+                <td>51</td>
+                <td>52</td>
+                <td>53</td>
+                <td>54</td>
+                <td>55</td>
+                <td>56</td>
+                <td>57</td>
+                <td>58</td>
+                <td>59</td>
+                <td>60</td>
+              </tr>
+              <tr>
+                <td>dfdafdas</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <footer class="parallax__title">
+          <div class="left">
+            <button onClick="play()" id="play">Play</button>
+            <button onClick="resume()" id="resume">Play</button>
+            <button onClick="pause()" id="pause">Pause</button>
+            <button onClick="scrollMode()" id="scrBtn">Scroll</button>
+            <audio autoplay="true" id="audio" controls loop>
+              <source src="./abstract.m4a" />
+            </audio>
+            <button>VOLUME</button>
+            <span class="vol">
+              <span class="vol-inner">&nbsp;</span>
+            </span>
+          </div>
+
+          <span>00 :00 / 2 :57</span>
+        </footer>
+      </div>
+      <!-- //section9 -->
+    </main>
+    <style>
+      body {
+        padding: 2vw;
+        letter-spacing: 0.15rem;
+        line-height: 1.2em;
+      }
+      li {
+        list-style: none;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+      }
+      .mask {
+        position: fixed;
+        top: 2vw;
+        left: 2vw;
+        width: 96vw;
+        width: calc(100vw - 4vw);
+        height: calc(100vh - 4vw);
+        background: #12211e;
+        color: #05fb9a;
+      }
+      .mask h1 {
+        color: #05fb9a;
+        padding: 0.5vw;
+        text-align: center;
+        margin-bottom: 1vw;
+        border-top: 0.1em solid #05fb9a;
+        border-bottom: 0.1em solid #05fb9a;
+        width: 95vw;
+        margin-top: 0.5vw;
+      }
+      .mask h2:first-child {
+        font-size: 4rem;
+        padding-top: 40px;
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding-bottom: 44px;
+      }
+      button {
+        background: none;
+        color: #05fb9a;
+        border: 0.1em solid #05fb9a;
+        padding: 0.5vw;
+        font-family: "01-digit";
+        letter-spacing: 0.15rem;
+        font-size: 1.25rem;
+      }
+      #resume {
+        display: none;
+      }
+      .contents {
+        display: flex;
+        flex-direction: row;
+        padding-top: 20px;
+      }
+      .contents table td {
+        padding: 20px 20px;
+      }
+      .contents .left {
+        width: 25%;
+      }
+      .contents .left table {
+        width: 100%;
+        white-space: nowrap;
+      }
+      .contents .right {
+        width: 75%;
+        overflow-x: scroll;
+      }
+      .contents .right table {
+        width: 100%;
+      }
+      td {
+        border: 0.1em solid #05fb9a;
+
+        min-width: 200px;
+      }
+      .right td {
+        border: 1px solid #05fb9a, 4px solid red;
+      }
+      .contents .last td {
+        border: none;
+        text-align: left;
+        padding-left: 5px;
+        padding-bottom: 2px;
+      }
+      .parallax__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: calc(100vw - 4vw);
+        bottom: 2vw;
+      }
+      audio {
+        position: fixed;
+        top: 200%;
+        left: 200%;
+      }
+      span.vol {
+        border: 0.1em solid #05fb9a;
+        padding: 0.5vw;
+        width: 200px;
+        padding-right: 50px;
+      }
+      span.vol .vol-inner {
+        background: #05fb9a;
+        width: 50px;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+    <script>
+      let sections = gsap.utils.toArray(".parallax__item");
+      const tl = gsap.timeline();
+      const audio = document.querySelector("audio");
+      const audioCurrentTime = audio.currentTime;
+      let musicOn = false;
+      let played = false;
+      document.querySelector("#resume").style.display = "none";
+      document.querySelector("#play").style.display = "inline-block";
+
+      function play() {
+        musicOn = true;
+        audio.play();
+        tl.to(sections, {
+          xPercent: -100 * (sections.length - 1),
+          duration: 200,
+        });
+        played = true;
+
+        if (played == true && musicOn == false) {
+          alert(3);
+          audio.play();
+          tl.resume();
+        }
+        document.querySelector("#play").style.display = "none";
+        document.querySelector("#resume").style.display = "inline-block";
+      }
+
+      function pause() {
+        musicOn = false;
+        tl.pause();
+        audio.pause();
+
+        document.querySelector("#play").style.display = "none";
+        document.querySelector("#resume").style.display = "inline-block";
+      }
+      function resume() {
+        tl.play();
+        audio.play();
+        document.querySelector("#resume").style.display = "none";
+        document.querySelector("#play").style.display = "inline-block";
+      }
+
+      function scrollMode() {
+        tl.pause();
+        tl.to(sections, {
+          xPercent: -100 * (sections.length - 1),
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#parallax__cont",
+            pin: true,
+            scrub: 1,
+            snap: 1 / (sections.length - 1),
+            end: "+=8200",
+            markers: true,
+            // end: document.querySelector("#parallax__cont").offsetWidth
+          },
+        });
+      }
+
+      function autoPlay() {
+        tl.pause();
+        tl.to(sections, {
+          xPercent: -100 * (sections.length - 1),
+          duration: 200,
+        });
+      }
+
+      // tl.to(sections, {
+      //     x: -6000,
+      //     duration: 200,
+      // })
+      const scrollContainer = document.querySelector("body");
+      const totalDuration = 174.056;
+
+      const parallaxCont = $("#parallax__cont");
+
+      const contWidth = parallaxCont.width();
+      const contRealWidth = contWidth - $(window).height();
+      console.log("c", contRealWidth);
+
+      //console.log(music.duration);
+      //   window.addEventListener("scroll", () => {});
+      function getPercent(m) {
+        var scrollHeight = $("body").height();
+        var scrollRealHeight = scrollHeight - $(window).height();
+        var winScrollTop = $(window).scrollTop();
+        var scrollPercent = $(window).scrollTop() / scrollRealHeight;
+        let musicPercent = 174.056 * scrollPercent;
+        // m.currentTime = musicPercent
+        if (musicPercent >= 174.056) {
+          m.currentTime = 174.056;
+        } else {
+          m.currentTime = musicPercent;
+        }
+        let imgPercent = (parallaxCont.width() * musicPercent) / 100;
+
+        parallaxCont.css("left", -imgPercent + "px");
+        console.log(musicPercent);
+      }
+      $(window).scroll(function () {
+        getPercent(audio);
+      });
+
+      function render(scrollPercent) {}
+
+      function init() {
+        getPercent(audio);
+      }
+
+      init();
+
+      //   music.addEventListener("timeupdate", () => {
+      //     const currentTime = music.currentTime;
+      //     const currentTimeFraction = currentTime / totalDuration;
+
+      //     const progressBarHeight =
+      //       scrollContainer.clientHeight * currentTimeFraction;
+      //     progressBar.style.height = `${progressBarHeight}px`;
+
+      //     const scrollPosition =
+      //       scrollContainer.scrollHeight * currentTimeFraction;
+      //     scrollContainer.scrollTop = scrollPosition;
+      //   });
+    </script>
+  </body>
+</html>
