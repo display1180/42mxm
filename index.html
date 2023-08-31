@@ -161,7 +161,7 @@
         >
           <h3>42MXM</h3>
           <h3 style="position: absolute; left: 50%; transform: translate(-50%)">
-            DESIGN CAMP 2023
+            DESIGN 2023
           </h3>
           <h3>YOUNGSEO YOOK</h3>
         </div>
@@ -714,7 +714,9 @@
             </span>
           </div>
 
-          <span><em id="nowTime">00 :00</em> / 2 :57</span>
+          <span
+            ><em id="nowTime">00 :00</em> / <em id="totalTime">2 :57</em></span
+          >
         </footer>
       </div>
       <!-- //section9 -->
@@ -790,7 +792,7 @@
       }
       .contents .right {
         width: 75%;
-        overflow-x: scroll;
+        overflow: hidden;
         position: relative;
       }
       @keyframes toLeft {
@@ -855,6 +857,7 @@
       const playBtn = document.getElementById("play");
       const pauseBtn = document.getElementById("pause");
       const nowTime = document.getElementById("nowTime");
+      const totalTime = document.getElementById("totalTime");
       const table = $(".right table");
       const tableX = table.scrollLeft();
 
@@ -869,8 +872,6 @@
         startTime = new Date().getTime();
 
         audio.play();
-
-        $('.right table').css('')
       });
       pauseBtn.addEventListener("click", () => {
         isRunning = false;
@@ -878,22 +879,68 @@
         $(".right").removeClass("on");
       });
 
-      let tableMusicDuration = 0;
+      let animationFrameId;
+      let totalMusicTime = 0;
 
       audio.addEventListener("loadedmetadata", () => {
         const totalDurationInSeconds = Math.floor(audio.duration);
+        totalMusicTime = totalDurationInSeconds;
         const totalMinutes = Math.floor(totalDurationInSeconds / 60);
         const totalSeconds = totalDurationInSeconds % 60;
-        // totalDurationElement.textContent = `${totalMinutes < 10 ? '0' : ''}${totalMinutes}:${totalSeconds < 10 ? '0' : ''}${totalSeconds}`
+        totalTime.textContent = `${
+          totalMinutes < 10 ? "0" : ""
+        }${totalMinutes}:${totalSeconds < 10 ? "0" : ""}${totalSeconds}`;
       });
 
-      audio.addEventListener("timeupdate", () => {
+      // table size 에서 div.right 사이즈 뺀 값 구하기
+      // 테이블 요소와 div.right 요소 가져오기
+      const tableArea = document.querySelector("div.right table");
+      const divRight = document.querySelector("div.right");
+
+      // 테이블 크기 구하기 (offsetWidth, offsetHeight 사용)
+      const tableWidth = tableArea.offsetWidth;
+      const tableHeight = tableArea.offsetHeight;
+
+      // div.right 크기 구하기
+      const divRightWidth = divRight.offsetWidth;
+      const divRightHeight = divRight.offsetHeight;
+
+      // table 크기에서 div.right 크기 뺀 값 구하기
+      const widthDifference = tableWidth - divRightWidth;
+      const heightDifference = tableHeight - divRightHeight;
+
+      console.log("tableWidth", tableWidth);
+      console.log("divRightWidth", divRightWidth);
+      console.log("widthDifference", widthDifference);
+
+      function updateCurrentTime() {
         const currentTimeInSeconds = Math.floor(audio.currentTime);
+        const currentTimeInMilliseconds = Math.floor(audio.currentTime * 1000); // 밀리세컨드...
         const currentMinutes = Math.floor(currentTimeInSeconds / 60);
         const currentSeconds = currentTimeInSeconds % 60;
+
+        //현재시간이 전체 시간에서 몇%진행되었는지 확인하기
+        const ratio = currentTimeInMilliseconds / 1000 / totalMusicTime;
+
+        //TODO: maxwidth 잘 가져오기
+        // const maxWidth = tableWidth
+        const maxWidth = 225.75 * 60;
+        const moveLeftSize = maxWidth * ratio;
+
+        tableArea.style.left = `-${moveLeftSize}px`;
+
         nowTime.textContent = `${
           currentMinutes < 10 ? "0" : ""
         }${currentMinutes}:${currentSeconds < 10 ? "0" : ""}${currentSeconds}`;
+        animationFrameId = requestAnimationFrame(updateCurrentTime);
+      }
+
+      audio.addEventListener("play", () => {
+        animationFrameId = requestAnimationFrame(updateCurrentTime);
+      });
+
+      audio.addEventListener("pause", () => {
+        cancelAnimationFrame(animationFrameId);
       });
 
       const scrollContainer = document.querySelector("body");
@@ -905,8 +952,6 @@
       const contWidth = parallaxCont.width();
       const contRealWidth = contWidth - $(window).height();
 
-      //console.log(music.duration);
-      //   window.addEventListener("scroll", () => {});
       function getPercent(m) {
         var scrollHeight = $("body").height();
         var scrollRealHeight = scrollHeight - $(window).height();
